@@ -25,10 +25,14 @@ const Weather = () => {
             base: `api.openweathermap.org/data/2.5/weather?`
         }
         // console.log(data)
-        fetch(`${data.base}zip=${data.zipcode}&appid=${data.key}`)
-            .then(res => res.json())
+        fetch(`${data.base}zip=${data.zipcode}&appid=${data.key}`, {
+            headers: {
+                'Content-Type': 'application/json',
+            }
+        })
+            .then(response => response.json())
+            .then(data => console.log(data));
     }
-
 
     return (
         <div>
