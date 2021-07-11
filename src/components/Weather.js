@@ -4,12 +4,10 @@ const API_KEY =
     process.env.REACT_APP_API_KEY;
 
 const Weather = () => {
-    // useState definitions here
     let [zipcode, setZipcode] = useState('')
 
     const handleChange = (event) => {
         setZipcode(event.target.value)
-        // console.log('Your zip code is ' + zipcode)
     }
 
     useEffect((event) => {
@@ -17,21 +15,13 @@ const Weather = () => {
     }, [])
 
     const handleSubmit = (e) => {
-        // console.log('you want to check this zipcode: ' + zipcode);
         e.preventDefault();
-        const data = {
-            key: API_KEY,
-            zipcode: zipcode,
-            base: `api.openweathermap.org/data/2.5/weather?`
-        }
-        // console.log(data)
-        fetch(`${data.base}zip=${data.zipcode}&appid=${data.key}`, {
-            headers: {
-                'Content-Type': 'application/json',
-            }
-        })
-            .then(response => response.json())
-            .then(data => console.log(data));
+        let url = `https://api.openweathermap.org/data/2.5/weather?zip=${zipcode}&appid=${API_KEY}`
+        axios.get(url)
+            .then(res => {
+                const persons = res.data;
+                console.log(persons)
+            })
     }
 
     return (
