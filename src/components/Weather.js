@@ -6,6 +6,12 @@ const API_KEY =
 const Weather = () => {
     let [zipcode, setZipcode] = useState('')
 
+    let [temp, setTemp] = useState('')
+    let [feelsLike, setFeelsLike] = useState('')
+    let [humidity, setHumidity] = useState('')
+    let [city, setCity] = useState('')
+    let [description, setDescription] = useState('')
+
     const handleChange = (event) => {
         setZipcode(event.target.value)
     }
@@ -21,6 +27,15 @@ const Weather = () => {
             .then(res => {
                 const persons = res.data;
                 console.log(persons)
+
+                let kelvinTemp = res.data.main.temp
+                setTemp(parseInt(((kelvinTemp - 273.15) * 1.8) + 32));
+
+                let kelvinFeelsLike = res.data.main.feels_like
+                setFeelsLike(parseInt(((kelvinFeelsLike - 273.15) * 1.8) + 32));
+                setHumidity(res.data.main.humidity);
+                setCity(res.data.name);
+                setDescription(res.data.weather[0].description)
             })
     }
 
@@ -29,7 +44,7 @@ const Weather = () => {
             <h2>Type in your zipcode to get an look at the forcast in your area</h2>
             <form onSubmit={handleSubmit}>
                 <p>
-                    { /* Display weather information here */}
+                    The temperature is {temp} degrees but it feels like {feelsLike} degrees.
                 </p>
                 <label>
                     Check this area:
