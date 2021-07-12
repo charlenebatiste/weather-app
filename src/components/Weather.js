@@ -50,10 +50,7 @@ const Weather = (props) => {
         <div>
             <h2>Type in your zipcode to get an look at the forcast in your area</h2>
             <form onSubmit={handleSubmit}>
-                <label>
-                    Check this area:
-                    <input type="text" onChange={handleChange} value={zipcode} />
-                </label>
+                <input type="text" onChange={handleChange} value={zipcode} />
                 <input type="submit" value="Get my forecast!" />
             </form>
         </div>

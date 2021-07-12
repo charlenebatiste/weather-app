@@ -23,7 +23,7 @@ const App = () => {
 
     return (
         <section className="appWrapper">
-            <h1>Weather Watch</h1>
+            <h1 className="appHeader">Weather Watch</h1>
             <Switch>
                 <Route
                     exact path="/"

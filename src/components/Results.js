@@ -16,7 +16,7 @@ const Results = (props) => {
             <p>
                 It is {temp} degrees in {city} but it feels like {feelsLike} degrees.
             </p>
-            <p>Humidity: {humidity}</p>
+            <p>Humidity: {humidity}%</p>
             <p>Description: {description}</p>
             <button
                 onClick={() => {

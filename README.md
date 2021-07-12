@@ -1,6 +1,6 @@
 # Weather App
 
-A simple React application where the user can search the weather based on an inputted zipcode.
+A simple React application where the user can search the weather based on a zipcode. The purpose of the app was to give me more practive with components and moving data through a SPA.
 
 # Table of Contents
 
@@ -16,9 +16,8 @@ A simple React application where the user can search the weather based on an inp
 This project was created with:
 
 -   React
--   JSX
--   CSS
 -   Axios
+- Bulma.io
 
 ## Status
 
