@@ -8,6 +8,9 @@ import {
     Redirect,
 } from "react-router-dom";
 
+// CSS
+import "./App.css";
+
 
 
 const App = () => {

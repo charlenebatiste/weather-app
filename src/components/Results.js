@@ -23,7 +23,7 @@ const Results = (props) => {
                     setRedirect(true)
                 }}
             >
-                Back to Seaarch
+                Back to Search
             </button>
         </>
     )
