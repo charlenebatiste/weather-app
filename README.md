@@ -16,6 +16,9 @@ A simple React application where the user can search the weather based on a zipc
 3. Rendered data returned from API call to Results component.
 4. Installed Bulma.io for styling and refactored JSX pages to conform to Bulma requirements.
 
+### Weather App Homepage
+![homepage of weather watch](/src/assets/homepage.png)
+
 ### Visual Prompt
 ![simple-weather-app](/src/assets/visual-prompt.png)
 
