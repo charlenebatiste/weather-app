@@ -11,6 +11,14 @@ A simple React application where the user can search the weather based on a zipc
 
 ## Process Work
 
+1. Determined needed components and set up React environment.
+2. Selected a weather api and used axios to get data for rendering.
+3. Rendered data returned from API call to Results component.
+4. Installed Bulma.io for styling and refactored JSX pages to conform to Bulma requirements.
+
+### Visual Prompt
+![simple-weather-app](/src/assets/visual-prompt.png)
+
 ## Used Technologies
 
 This project was created with:

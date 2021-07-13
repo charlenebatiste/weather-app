@@ -10,7 +10,7 @@ const API_KEY =
 
 
 const Weather = (props) => {
-    const { setTemp, setFeelsLike, setHumidity, setCity, setDescription, setIcon } = props;
+    const { setTemp, setTempMax, setTempMin, setFeelsLike, setHumidity, setCity, setDescription, setIcon } = props;
     const [zipcode, setZipcode] = useState('')
     const [redirect, setRedirect] =
         useState(false);
@@ -26,11 +26,15 @@ const Weather = (props) => {
         let url = `https://api.openweathermap.org/data/2.5/weather?zip=${zipcode}&appid=${API_KEY}`
         axios.get(url)
             .then(res => {
-                const weatherRes = res.data;
-                console.log(weatherRes)
 
                 let kelvinTemp = res.data.main.temp
                 setTemp(parseInt(((kelvinTemp - 273.15) * 1.8) + 32));
+
+                let kelvinTempMax = res.data.main.temp_max
+                setTempMax(parseInt(((kelvinTempMax - 273.15) * 1.8) + 32));
+
+                let kelvinTempMin = res.data.main.temp_min
+                setTempMin(parseInt(((kelvinTempMin - 273.15) * 1.8) + 32));
 
                 let kelvinFeelsLike = res.data.main.feels_like
                 setFeelsLike(parseInt(((kelvinFeelsLike - 273.15) * 1.8) + 32));
@@ -47,11 +51,15 @@ const Weather = (props) => {
         return <Redirect to="/results" />;
 
     return (
-        <div className="container">
-            <h2>Type in your zipcode to get an look at the forcast in your area</h2>
+        <div className="column is-four-fifths CTA">
+            <h2 className="title is-4">Type in your zipcode to get a look at the forcast in your area</h2>
             <form onSubmit={handleSubmit}>
-                <input type="text" onChange={handleChange} value={zipcode} />
-                <input type="submit" value="Get my forecast!" />
+                <div className="formContent ">
+                    <input className="zipBox" type="text" onChange={handleChange} value={zipcode} />
+                </div>
+                <div className="formContent content-btn">
+                    <input class="button" type="submit" value="Get my forecast!" />
+                </div>
             </form>
         </div>
     )

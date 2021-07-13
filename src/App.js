@@ -19,6 +19,8 @@ import "./App.css";
 const App = () => {
 
     const [temp, setTemp] = useState('');
+    const [tempMax, setTempMax] = useState('');
+    const [tempMin, setTempMin] = useState('');
     const [feelsLike, setFeelsLike] = useState('');
     const [humidity, setHumidity] = useState('');
     const [city, setCity] = useState('');
@@ -36,6 +38,12 @@ const App = () => {
                             {...props}
                             setTemp={
                                 setTemp
+                            }
+                            setTempMax={
+                                setTempMax
+                            }
+                            setTempMin={
+                                setTempMin
                             }
                             setFeelsLike={
                                 setFeelsLike
@@ -61,6 +69,8 @@ const App = () => {
                             temp={
                                 temp
                             }
+                            tempMax={tempMax}
+                            tempMin={tempMin}
                             feelsLike={
                                 feelsLike
                             }
@@ -76,6 +86,7 @@ const App = () => {
                             icon={
                                 icon
                             }
+
                         />
                     )}
                 />

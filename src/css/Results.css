@@ -1,0 +1,8 @@
+.card{
+    text-align: center;
+}
+
+.card-header-title{
+    display: flex;
+    flex-direction: column;
+}

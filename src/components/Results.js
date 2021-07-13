@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from 'react'
 import { Redirect } from "react-router-dom";
 import 'bulma/css/bulma.min.css';
+import "../css/Results.css";
 
 
 const Results = (props) => {
 
-    const { temp, feelsLike, humidity, city, description, icon } = props;
+    const { temp, tempMax, tempMin, feelsLike, humidity, city, description, icon } = props;
     const [redirect, setRedirect] =
         useState(false);
 
@@ -16,21 +17,42 @@ const Results = (props) => {
 
     return (
         <div className="container">
-            <div className="card">
-                <p>
-                    It is {temp} degrees in {city} but it feels like {feelsLike} degrees.
-                </p>
-                <p>Humidity: {humidity}%</p>
-                <p>Description: {description}</p>
-                <img src={thisIcon} />
-                <button
-                    onClick={() => {
-                        setRedirect(true)
-                    }}
-                >
-                    Back to Search
-                </button>
+            <div className="column is-four-fifths-mobile is-half-tablet  is-two-fifths-desktop">
+                <div className="card">
+                    <div className="card-header-title">
+                        <p >
+                            {city}
+                        </p>
+                        <p className="subtitle is-6">
+                            {description}
+                        </p>
+                    </div>
+
+                    <div className="card-image">
+                        <img src={thisIcon} />
+                    </div>
+                    <div class="content">
+                        <h2 class="title is-2">{temp}°</h2>
+                        <p>feels {feelsLike}°</p>
+                    </div>
+                    <div>
+                        <p>Humidity: {humidity}%</p>
+                        <p>H: {tempMax}°</p>
+                        <p>L: {tempMin}°</p>
+                    </div>
+                </div>
             </div>
+
+
+
+            <button
+                onClick={() => {
+                    setRedirect(true)
+                }}
+            >
+                Back to Search
+            </button>
+
         </div>
     )
 }
