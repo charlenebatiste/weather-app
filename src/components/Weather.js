@@ -9,7 +9,7 @@ const API_KEY =
 
 
 const Weather = (props) => {
-    const { setTemp, setFeelsLike, setHumidity, setCity, setDescription } = props;
+    const { setTemp, setFeelsLike, setHumidity, setCity, setDescription, setIcon } = props;
     const [zipcode, setZipcode] = useState('')
     const [redirect, setRedirect] =
         useState(false);
@@ -18,9 +18,7 @@ const Weather = (props) => {
         setZipcode(event.target.value)
     }
 
-    useEffect((event) => {
-        // Your fetch call here
-    }, [])
+
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -39,6 +37,7 @@ const Weather = (props) => {
                 setHumidity(res.data.main.humidity);
                 setCity(res.data.name);
                 setDescription(res.data.weather[0].description);
+                setIcon(res.data.weather[0].icon);
                 setRedirect(true);
             })
     }

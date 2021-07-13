@@ -20,6 +20,7 @@ const App = () => {
     const [humidity, setHumidity] = useState('');
     const [city, setCity] = useState('');
     const [description, setDescription] = useState('');
+    const [icon, setIcon] = useState('');
 
     return (
         <section className="appWrapper">
@@ -45,6 +46,7 @@ const App = () => {
                             setDescription={
                                 setDescription
                             }
+                            setIcon={setIcon}
                         />
                     )}
                 />
@@ -67,6 +69,9 @@ const App = () => {
                             }
                             description={
                                 description
+                            }
+                            icon={
+                                icon
                             }
                         />
                     )}
