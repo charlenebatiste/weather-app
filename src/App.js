@@ -1,6 +1,9 @@
+import 'bulma/css/bulma.min.css';
 import Weather from './components/Weather';
 import Results from './components/Results';
 import React, { useEffect, useState } from 'react'
+
+
 
 import {
     Route,
@@ -24,7 +27,7 @@ const App = () => {
 
     return (
         <section className="appWrapper">
-            <h1 className="appHeader">Weather Watch</h1>
+            <h1 className="appHeader title">Weather Watch</h1>
             <Switch>
                 <Route
                     exact path="/"

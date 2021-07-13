@@ -1,4 +1,5 @@
 // CSS
+import 'bulma/css/bulma.min.css';
 import "../css/Weather.css";
 import { Redirect } from "react-router-dom";
 import axios from 'axios';
@@ -46,7 +47,7 @@ const Weather = (props) => {
         return <Redirect to="/results" />;
 
     return (
-        <div>
+        <div className="container">
             <h2>Type in your zipcode to get an look at the forcast in your area</h2>
             <form onSubmit={handleSubmit}>
                 <input type="text" onChange={handleChange} value={zipcode} />
