@@ -21,7 +21,6 @@ const App = () => {
     const [temp, setTemp] = useState('');
     const [tempMax, setTempMax] = useState('');
     const [tempMin, setTempMin] = useState('');
-    const [feelsLike, setFeelsLike] = useState('');
     const [humidity, setHumidity] = useState('');
     const [city, setCity] = useState('');
     const [description, setDescription] = useState('');
@@ -44,9 +43,6 @@ const App = () => {
                             }
                             setTempMin={
                                 setTempMin
-                            }
-                            setFeelsLike={
-                                setFeelsLike
                             }
                             setHumidity={
                                 setHumidity
@@ -71,9 +67,6 @@ const App = () => {
                             }
                             tempMax={tempMax}
                             tempMin={tempMin}
-                            feelsLike={
-                                feelsLike
-                            }
                             humidity={
                                 humidity
                             }

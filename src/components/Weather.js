@@ -10,7 +10,7 @@ const API_KEY =
 
 
 const Weather = (props) => {
-    const { setTemp, setTempMax, setTempMin, setFeelsLike, setHumidity, setCity, setDescription, setIcon } = props;
+    const { setTemp, setTempMax, setTempMin, setHumidity, setCity, setDescription, setIcon } = props;
     const [zipcode, setZipcode] = useState('')
     const [redirect, setRedirect] =
         useState(false);
@@ -35,9 +35,6 @@ const Weather = (props) => {
 
                 let kelvinTempMin = res.data.main.temp_min
                 setTempMin(parseInt(((kelvinTempMin - 273.15) * 1.8) + 32));
-
-                let kelvinFeelsLike = res.data.main.feels_like
-                setFeelsLike(parseInt(((kelvinFeelsLike - 273.15) * 1.8) + 32));
 
                 setHumidity(res.data.main.humidity);
                 setCity(res.data.name);
